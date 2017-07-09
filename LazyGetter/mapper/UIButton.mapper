@@ -1,0 +1,11 @@
+- (UIButton *)replaceMe{
+    if(!_replaceMe){
+        _replaceMe = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_replaceMe setImage:<#Image#> forState:UIControlStateNormal];
+        [_replaceMe setImage:<#Image#> forState:UIControlStateHighlighted];
+        [_replaceMe setBackgroundImage:<#Image#> forState:UIControlStateNormal];
+        [_replaceMe setBackgroundImage:<#Image#> forState:UIControlStateHighlighted];
+        [_replaceMe addTarget:self action:@selector(<#selector#>) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _replaceMe;
+}

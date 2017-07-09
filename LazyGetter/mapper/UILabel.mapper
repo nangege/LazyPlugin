@@ -1,0 +1,9 @@
+- (UILabel *)replaceMe{
+    if(!_replaceMe){
+        _replaceMe = [[UILabel alloc] init];
+        _replaceMe.font = <#Font#>;
+        _replaceMe.textColor = <#Color#>;
+        _replaceMe.backgroundColor = <#Color#>;
+    }
+    return _replaceMe;
+}

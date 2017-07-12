@@ -32,7 +32,7 @@ class MacroRefactor:NSObject, XCSourceEditorCommand {
         
         guard let type = typerFor(text: value) else { continue }
         
-        var constantStatement = "const static \(type) \(name) = \(value);"
+        var constantStatement = "static \(type) \(name) = \(value);"
         
         if text.contains("//"), let comment = text.components(separatedBy: "//").last{
             constantStatement = constantStatement + " // \(comment)"
@@ -48,9 +48,11 @@ class MacroRefactor:NSObject, XCSourceEditorCommand {
     var valueType:String? = nil
     
     if isObjcString(text: text){
-      valueType = "NSString *"
+      valueType = "NSString *const"
     }else if isFloatValue(text: text){
-      valueType = "NSNumber *"
+      valueType = "const CGFloat"
+    }else if isIntValue(text: text){
+      valueType = "const NSInteger"
     }
     return valueType
   }
@@ -61,7 +63,14 @@ class MacroRefactor:NSObject, XCSourceEditorCommand {
   
   func isFloatValue(text:String) -> Bool{
     let floatValue = (text as NSString).floatValue
-    return floatValue != 0
+    
+    // only value with "." be treated as CGFloat ,else as Interger
+    return text.contains(".") && floatValue != 0
+  }
+  
+  func isIntValue(text:String) -> Bool{
+    let intValue = (text as NSString).integerValue
+    return intValue != 0
   }
   
   func canProcess(text:String) -> Bool {

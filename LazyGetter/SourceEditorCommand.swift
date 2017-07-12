@@ -12,40 +12,38 @@ import XcodeKit
 
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
-    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
+  func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
+    
+    let processors:[GetterGenerator] = [ObjcProcessor(),SwiftProcessor()]
+    var generator:GetterGenerator? = nil
+    
+    invocation.buffer.selections
+      .filter{
+        $0 as? XCSourceTextRange != nil
+      }
+      .map{
+        $0 as! XCSourceTextRange
+      }
+      .forEach { (textRange) in
         
-        invocation.buffer.selections
-            .filter{
-                $0 as? XCSourceTextRange != nil
+        for line in textRange.start.line ... textRange.end.line{
+          guard let text = invocation.buffer.lines[line] as? String else{
+            continue
+          }
+          for processor in processors {
+            if processor.canProcess(text: text){
+              generator = processor
+              break
             }
-            .map{
-                $0 as! XCSourceTextRange
-            }
-            .forEach { (textRange) in
-                for line in textRange.start.line ... textRange.end.line{
-                    
-                    if let text = verifyPropertyString(invocation.buffer.lines[line]) {
-                      
-                      let processor = objcProcessor();
-                        
-                        let texts = processor.generator(text: text)
-                        
-                        let lines = invocation.buffer.lines
-                        let start = lines.count - 1
-                        lines.insert(texts, at: IndexSet(integersIn: start ... start + texts.count - 1))
-                    }
-                }
+          }
+          if generator != nil{
+            break
+          }
         }
-        
-        completionHandler(nil)
+        generator?.perform(with: invocation)
     }
+    completionHandler(nil)
+  }
 }
 
 
-
-func verifyPropertyString(_ origin : Any) -> String? {
-    if let text = origin as? String, text.hasPrefix("@property") {
-        return text
-    }
-    return nil
-}

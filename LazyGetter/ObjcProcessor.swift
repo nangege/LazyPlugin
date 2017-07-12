@@ -1,25 +1,14 @@
 //
-//  GetterGnerator.swift
+//  ObjcProcessor.swift
 //  LazyGetter
 //
-//  Created by nangezao on 2017/7/9.
+//  Created by nangezao on 2017/7/12.
 //  Copyright © 2017年 Tang,Nan(MAD). All rights reserved.
 //
 
-import Foundation
+import XcodeKit
 
-protocol GetterProcessor {
-  func generator(text:String) -> Array<String>
-}
-
-struct SwiftProcessor {
-  struct Constant {
-    static let SwiftTemple = """
-                             
-  }
-}
-
-struct objcProcessor:GetterProcessor {
+struct ObjcProcessor:GetterGenerator {
   struct Constant {
     static let ObjcTemplate = """
                               -(ClassName *)replaceMe{
@@ -32,29 +21,24 @@ struct objcProcessor:GetterProcessor {
     static let PropertyPlaceHolder  = "replaceMe"
     static let ClassNamePlaceHolder = "ClassName"
   }
-    
-    
-  func generator(text: String) -> Array<String> {
-    return getter(from:text)
-  }
   
   func getProperty(from lineText:String) -> String {
     return lineText.components(separatedBy: "*").last!
-                   .components(separatedBy: ";").first!
-                   .trimmingCharacters(in: .whitespaces)
+      .components(separatedBy: ";").first!
+      .trimmingCharacters(in: .whitespaces)
   }
   
   func getClassName(from lineText:String) -> String{
     return lineText.components(separatedBy: "*").first!
-                   .components(separatedBy: ")").last!
-                   .trimmingCharacters(in: .whitespaces)
+      .components(separatedBy: ")").last!
+      .trimmingCharacters(in: .whitespaces)
   }
   
   func getter(forClass className:String, property:String) -> [String] {
     let templete = templeFor(className: className)
     let texts = templete.replacingOccurrences(of: Constant.ClassNamePlaceHolder,with: className)
-                        .replacingOccurrences(of: Constant.PropertyPlaceHolder, with: property)
-                        .components(separatedBy: .newlines)
+      .replacingOccurrences(of: Constant.PropertyPlaceHolder, with: property)
+      .components(separatedBy: .newlines)
     return texts
   }
   
@@ -68,14 +52,48 @@ struct objcProcessor:GetterProcessor {
     if let path = Bundle.main.url(forResource: className, withExtension: ".mapper") {
       do{
         let str = try String(contentsOf: path)
-                
-          if(!str.isEmpty){
-            return str
-          }
-        }catch{
-                
+        
+        if(!str.isEmpty){
+          return str
         }
+      }catch{
+        
+      }
     }
     return Constant.ObjcTemplate
+  }
+}
+
+extension ObjcProcessor{
+  func generator(text: String) -> Array<String> {
+    return getter(from:text)
+  }
+  
+  func canProcess(text: String) -> Bool {
+    return  text.hasPrefix("@property")
+  }
+  
+  func perform(with invocation: XCSourceEditorCommandInvocation) {
+    invocation.buffer.selections
+      .filter{
+        $0 as? XCSourceTextRange != nil
+      }
+      .map{
+        $0 as! XCSourceTextRange
+      }
+      .forEach { (textRange) in
+        
+        for line in textRange.start.line ... textRange.end.line{
+          
+          if let text = invocation.buffer.lines[line] as? String,canProcess(text: text){
+            let texts = generator(text: text)
+            if text.count >= 1{
+              let lines = invocation.buffer.lines
+              let start = lines.count - 1
+              lines.insert(texts, at: IndexSet(integersIn: start ... start + texts.count - 1))
+            }
+          }
+        }
+    }
   }
 }

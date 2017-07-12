@@ -1,0 +1,9 @@
+let replaceMe:UIButton = {
+  let button = UIButton()
+  button.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControlState#>)
+  button.setTitle(<#T##title: String?##String?#>, for: <#T##UIControlState#>)
+  button.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControlState#>)
+  return button
+}()
+
+

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		380E1DD01F11D70700E45C24 /* GetterGnerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */; };
+		3867CAEE1F13AB5700B79321 /* SwiftProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */; };
+		388D64781F15324B00A3C988 /* ObjcProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D64771F15324B00A3C988 /* ObjcProcessor.swift */; };
+		388D647A1F15329B00A3C988 /* UIButton.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 388D64791F15329B00A3C988 /* UIButton.swiftmapper */; };
+		38E7085C1F153959008839DB /* UILabel.swiftmapper in Sources */ = {isa = PBXBuildFile; fileRef = 38E7085B1F153959008839DB /* UILabel.swiftmapper */; };
+		38E7085E1F153986008839DB /* UITableView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085D1F153986008839DB /* UITableView.swiftmapper */; };
+		38E708601F1539A2008839DB /* UIView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085F1F1539A2008839DB /* UIView.swiftmapper */; };
 		7B0CF1481E08D7AD00A5019B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1471E08D7AD00A5019B /* AppDelegate.swift */; };
 		7B0CF14A1E08D7AD00A5019B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1491E08D7AD00A5019B /* ViewController.swift */; };
 		7B0CF14C1E08D7AD00A5019B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF14B1E08D7AD00A5019B /* Assets.xcassets */; };
@@ -15,7 +21,7 @@
 		7B0CF15D1E08D7CC00A5019B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B0CF15C1E08D7CC00A5019B /* Cocoa.framework */; };
 		7B0CF1621E08D7CC00A5019B /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1611E08D7CC00A5019B /* SourceEditorExtension.swift */; };
 		7B0CF1641E08D7CC00A5019B /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1631E08D7CC00A5019B /* SourceEditorCommand.swift */; };
-		7B0CF1681E08D7CC00A5019B /* LazyGetter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B0CF15A1E08D7CC00A5019B /* LazyGetter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7B0CF1681E08D7CC00A5019B /* Lazy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B0CF15A1E08D7CC00A5019B /* Lazy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B0CF1721E08D84100A5019B /* UIButton.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF16E1E08D84100A5019B /* UIButton.mapper */; };
 		7B0CF1731E08D84100A5019B /* UILabel.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF16F1E08D84100A5019B /* UILabel.mapper */; };
 		7B0CF1741E08D84100A5019B /* UITableView.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF1701E08D84100A5019B /* UITableView.mapper */; };
@@ -40,7 +46,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7B0CF1681E08D7CC00A5019B /* LazyGetter.appex in Embed App Extensions */,
+				7B0CF1681E08D7CC00A5019B /* Lazy.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,13 +55,19 @@
 
 /* Begin PBXFileReference section */
 		380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterGnerator.swift; sourceTree = "<group>"; };
+		3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProcessor.swift; sourceTree = "<group>"; };
+		388D64771F15324B00A3C988 /* ObjcProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjcProcessor.swift; sourceTree = "<group>"; };
+		388D64791F15329B00A3C988 /* UIButton.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UIButton.swiftmapper; path = mapper/UIButton.swiftmapper; sourceTree = "<group>"; };
+		38E7085B1F153959008839DB /* UILabel.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UILabel.swiftmapper; path = mapper/UILabel.swiftmapper; sourceTree = "<group>"; };
+		38E7085D1F153986008839DB /* UITableView.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UITableView.swiftmapper; path = mapper/UITableView.swiftmapper; sourceTree = "<group>"; };
+		38E7085F1F1539A2008839DB /* UIView.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UIView.swiftmapper; path = mapper/UIView.swiftmapper; sourceTree = "<group>"; };
 		7B0CF1441E08D7AD00A5019B /* LazyPlugin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyPlugin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0CF1471E08D7AD00A5019B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B0CF1491E08D7AD00A5019B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B0CF14B1E08D7AD00A5019B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B0CF14E1E08D7AD00A5019B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B0CF1501E08D7AD00A5019B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B0CF15A1E08D7CC00A5019B /* LazyGetter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LazyGetter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B0CF15A1E08D7CC00A5019B /* Lazy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lazy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0CF15C1E08D7CC00A5019B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7B0CF1601E08D7CC00A5019B /* LazyGetter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LazyGetter.entitlements; sourceTree = "<group>"; };
 		7B0CF1611E08D7CC00A5019B /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
@@ -101,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0CF1441E08D7AD00A5019B /* LazyPlugin.app */,
-				7B0CF15A1E08D7CC00A5019B /* LazyGetter.appex */,
+				7B0CF15A1E08D7CC00A5019B /* Lazy.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +144,8 @@
 				7B0CF1611E08D7CC00A5019B /* SourceEditorExtension.swift */,
 				7B0CF1631E08D7CC00A5019B /* SourceEditorCommand.swift */,
 				380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */,
+				3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */,
+				388D64771F15324B00A3C988 /* ObjcProcessor.swift */,
 				7B0CF1651E08D7CC00A5019B /* Info.plist */,
 				7B0CF15F1E08D7CC00A5019B /* Supporting Files */,
 			);
@@ -155,6 +169,10 @@
 				7B0CF16F1E08D84100A5019B /* UILabel.mapper */,
 				7B0CF1701E08D84100A5019B /* UITableView.mapper */,
 				7B0CF1711E08D84100A5019B /* UIView.mapper */,
+				388D64791F15329B00A3C988 /* UIButton.swiftmapper */,
+				38E7085B1F153959008839DB /* UILabel.swiftmapper */,
+				38E7085D1F153986008839DB /* UITableView.swiftmapper */,
+				38E7085F1F1539A2008839DB /* UIView.swiftmapper */,
 			);
 			name = mapper;
 			sourceTree = "<group>";
@@ -181,9 +199,9 @@
 			productReference = 7B0CF1441E08D7AD00A5019B /* LazyPlugin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7B0CF1591E08D7CC00A5019B /* LazyGetter */ = {
+		7B0CF1591E08D7CC00A5019B /* Lazy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B0CF1691E08D7CC00A5019B /* Build configuration list for PBXNativeTarget "LazyGetter" */;
+			buildConfigurationList = 7B0CF1691E08D7CC00A5019B /* Build configuration list for PBXNativeTarget "Lazy" */;
 			buildPhases = (
 				7B0CF1561E08D7CC00A5019B /* Sources */,
 				7B0CF1571E08D7CC00A5019B /* Frameworks */,
@@ -193,9 +211,9 @@
 			);
 			dependencies = (
 			);
-			name = LazyGetter;
+			name = Lazy;
 			productName = LazyGetter;
-			productReference = 7B0CF15A1E08D7CC00A5019B /* LazyGetter.appex */;
+			productReference = 7B0CF15A1E08D7CC00A5019B /* Lazy.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
@@ -236,7 +254,7 @@
 			projectRoot = "";
 			targets = (
 				7B0CF1431E08D7AD00A5019B /* LazyPlugin */,
-				7B0CF1591E08D7CC00A5019B /* LazyGetter */,
+				7B0CF1591E08D7CC00A5019B /* Lazy */,
 			);
 		};
 /* End PBXProject section */
@@ -246,8 +264,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E7085E1F153986008839DB /* UITableView.swiftmapper in Resources */,
 				7B0CF14C1E08D7AD00A5019B /* Assets.xcassets in Resources */,
 				7B0CF14F1E08D7AD00A5019B /* Main.storyboard in Resources */,
+				38E708601F1539A2008839DB /* UIView.swiftmapper in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +280,7 @@
 				7B0CF1751E08D84100A5019B /* UIView.mapper in Resources */,
 				7B0CF1741E08D84100A5019B /* UITableView.mapper in Resources */,
 				7B0CF1731E08D84100A5019B /* UILabel.mapper in Resources */,
+				388D647A1F15329B00A3C988 /* UIButton.swiftmapper in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +293,7 @@
 			files = (
 				7B0CF14A1E08D7AD00A5019B /* ViewController.swift in Sources */,
 				7B0CF1481E08D7AD00A5019B /* AppDelegate.swift in Sources */,
+				38E7085C1F153959008839DB /* UILabel.swiftmapper in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3867CAEE1F13AB5700B79321 /* SwiftProcessor.swift in Sources */,
 				380E1DD01F11D70700E45C24 /* GetterGnerator.swift in Sources */,
 				7B0CF1621E08D7CC00A5019B /* SourceEditorExtension.swift in Sources */,
+				388D64781F15324B00A3C988 /* ObjcProcessor.swift in Sources */,
 				7B0CF1641E08D7CC00A5019B /* SourceEditorCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +314,7 @@
 /* Begin PBXTargetDependency section */
 		7B0CF1671E08D7CC00A5019B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7B0CF1591E08D7CC00A5019B /* LazyGetter */;
+			target = 7B0CF1591E08D7CC00A5019B /* Lazy */;
 			targetProxy = 7B0CF1661E08D7CC00A5019B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -490,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B0CF1691E08D7CC00A5019B /* Build configuration list for PBXNativeTarget "LazyGetter" */ = {
+		7B0CF1691E08D7CC00A5019B /* Build configuration list for PBXNativeTarget "Lazy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B0CF16A1E08D7CC00A5019B /* Debug */,

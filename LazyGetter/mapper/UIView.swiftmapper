@@ -1,0 +1,5 @@
+let replaceMe:UIView = {
+  let view = UIView()
+  view.backgroundColor = <#Color#>
+  return view
+}()

@@ -9,7 +9,7 @@
 import Foundation
 import XcodeKit
 
-struct SwiftProcessor {
+struct SwiftGetter {
   
   struct Constant {
     static let SwiftTemplate = """
@@ -47,7 +47,16 @@ struct SwiftProcessor {
     let property = getProperty(from: text)
     let className = getClassName(from: text)
     
-    return getter(forClass: className, property: property)
+    // add line space
+    let spaceCount = text.countOfPrefexSpace()
+    let prefex = String(repeating: " ", count: spaceCount)
+    var getter = self.getter(forClass: className, property: property).map({ prefex + $0})
+    
+    // replace first line as original text appand "= {", so as to keep access control token
+    if getter.count > 0{
+        getter[0] = text.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression) + " = {"
+    }
+    return getter
   }
   
   func templeFor(className:String) -> String {
@@ -66,7 +75,7 @@ struct SwiftProcessor {
   }
 }
 
-extension SwiftProcessor:GetterGenerator{
+extension SwiftGetter:GetterGenerator{
   
   func generator(text: String) -> Array<String> {
     return getter(from:text)
@@ -78,32 +87,27 @@ extension SwiftProcessor:GetterGenerator{
   
   func perform(with invocation: XCSourceEditorCommandInvocation) {
     
-    invocation.buffer.selections
-      .filter{
-        $0 as? XCSourceTextRange != nil
-      }
-      .map{
-        $0 as! XCSourceTextRange
-      }
-      .forEach { (textRange) in
-        var allTexts = [String]()
+    invocation.buffer.selections .forEach { (textRange) in
+      guard let textRange = textRange as? XCSourceTextRange else { return }
         
-        for line in textRange.start.line ... textRange.end.line{
-          if let text = invocation.buffer.lines[line] as? String{
-            if canProcess(text: text){
-              let spaceCount = text.countOfPrefexSpace()
-              let prefex = String(repeating: " ", count: spaceCount)
-              let getter = generator(text: text).map({ prefex + $0})
-              allTexts.append(contentsOf:getter)
-            }else{
-              allTexts.append(text)
-            }
-          }
+      var allTexts = [String]()
+        
+      for line in textRange.start.line ... textRange.end.line{
+        guard  let text = invocation.buffer.lines[line] as? String else{
+          continue
         }
-        invocation.buffer.lines.replaceObjects(in: NSMakeRange(textRange.start.line, textRange.end.line - textRange.start.line + 1), withObjectsFrom: allTexts)
+        if canProcess(text: text){
+          allTexts.append(contentsOf:generator(text: text))
+        }else{
+          allTexts.append(text)
+        }
+      }
+      let range = NSMakeRange(textRange.start.line,
+                              textRange.end.line - textRange.start.line + 1)
+      
+      invocation.buffer.lines.replaceObjects(in: range ,withObjectsFrom: allTexts)
     }
   }
-  
 }
 
 extension String{

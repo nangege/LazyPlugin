@@ -5,5 +5,3 @@ let replaceMe:UIButton = {
   button.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControlState#>)
   return button
 }()
-
-

@@ -8,7 +8,7 @@
 
 import XcodeKit
 
-struct ObjcProcessor:GetterGenerator {
+struct ObjcGetter:GetterGenerator {
   struct Constant {
     static let ObjcTemplate = """
                               -(ClassName *)replaceMe{
@@ -37,8 +37,8 @@ struct ObjcProcessor:GetterGenerator {
   func getter(forClass className:String, property:String) -> [String] {
     let templete = templeFor(className: className)
     let texts = templete.replacingOccurrences(of: Constant.ClassNamePlaceHolder,with: className)
-      .replacingOccurrences(of: Constant.PropertyPlaceHolder, with: property)
-      .components(separatedBy: .newlines)
+                        .replacingOccurrences(of: Constant.PropertyPlaceHolder, with: property)
+                        .components(separatedBy: .newlines)
     return texts
   }
   
@@ -64,36 +64,32 @@ struct ObjcProcessor:GetterGenerator {
   }
 }
 
-extension ObjcProcessor{
+extension ObjcGetter{
   func generator(text: String) -> Array<String> {
     return getter(from:text)
   }
-  
+    
+  // better with regex
   func canProcess(text: String) -> Bool {
     return  text.hasPrefix("@property")
   }
   
   func perform(with invocation: XCSourceEditorCommandInvocation) {
-    invocation.buffer.selections
-      .filter{
-        $0 as? XCSourceTextRange != nil
-      }
-      .map{
-        $0 as! XCSourceTextRange
-      }
-      .forEach { (textRange) in
+    invocation.buffer.selections.forEach { (textRange) in
+      guard let textRange = textRange as? XCSourceTextRange else { return }
+      
+      for line in textRange.start.line ... textRange.end.line{
         
-        for line in textRange.start.line ... textRange.end.line{
-          
-          if let text = invocation.buffer.lines[line] as? String,canProcess(text: text){
-            let texts = generator(text: text)
-            if text.count >= 1{
-              let lines = invocation.buffer.lines
-              let start = lines.count - 1
-              lines.insert(texts, at: IndexSet(integersIn: start ... start + texts.count - 1))
-            }
-          }
+        guard let text = invocation.buffer.lines[line] as? String,canProcess(text: text) else{
+          continue
         }
+        let texts = generator(text: text)
+        if texts.count >= 1{
+          let lines = invocation.buffer.lines
+          let start = lines.count - 1
+          lines.insert(texts, at: IndexSet(integersIn: start ... start + texts.count - 1))
+        }
+      }
     }
   }
 }

@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		380E1DD01F11D70700E45C24 /* GetterGnerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */; };
-		3867CAEE1F13AB5700B79321 /* SwiftProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */; };
-		388D64781F15324B00A3C988 /* ObjcProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D64771F15324B00A3C988 /* ObjcProcessor.swift */; };
+		3867CAEE1F13AB5700B79321 /* SwiftGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3867CAED1F13AB5700B79321 /* SwiftGetter.swift */; };
+		388D64781F15324B00A3C988 /* ObjcGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388D64771F15324B00A3C988 /* ObjcGetter.swift */; };
 		388D647A1F15329B00A3C988 /* UIButton.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 388D64791F15329B00A3C988 /* UIButton.swiftmapper */; };
 		38E7085C1F153959008839DB /* UILabel.swiftmapper in Sources */ = {isa = PBXBuildFile; fileRef = 38E7085B1F153959008839DB /* UILabel.swiftmapper */; };
-		38E7085E1F153986008839DB /* UITableView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085D1F153986008839DB /* UITableView.swiftmapper */; };
-		38E708601F1539A2008839DB /* UIView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085F1F1539A2008839DB /* UIView.swiftmapper */; };
 		7B0CF1481E08D7AD00A5019B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1471E08D7AD00A5019B /* AppDelegate.swift */; };
 		7B0CF14A1E08D7AD00A5019B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0CF1491E08D7AD00A5019B /* ViewController.swift */; };
 		7B0CF14C1E08D7AD00A5019B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF14B1E08D7AD00A5019B /* Assets.xcassets */; };
@@ -26,7 +24,12 @@
 		7B0CF1731E08D84100A5019B /* UILabel.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF16F1E08D84100A5019B /* UILabel.mapper */; };
 		7B0CF1741E08D84100A5019B /* UITableView.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF1701E08D84100A5019B /* UITableView.mapper */; };
 		7B0CF1751E08D84100A5019B /* UIView.mapper in Resources */ = {isa = PBXBuildFile; fileRef = 7B0CF1711E08D84100A5019B /* UIView.mapper */; };
+		7B0F78401F15C92200C38F36 /* UILabel.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085B1F153959008839DB /* UILabel.swiftmapper */; };
+		7B0F78411F15C92200C38F36 /* UITableView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085D1F153986008839DB /* UITableView.swiftmapper */; };
+		7B0F78421F15C92200C38F36 /* UIView.swiftmapper in Resources */ = {isa = PBXBuildFile; fileRef = 38E7085F1F1539A2008839DB /* UIView.swiftmapper */; };
 		7B3648E91E09012500C6558D /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 7B3648E81E09012500C6558D /* ReadMe */; };
+		7B8009E31F15D2FF004FE98C /* GetterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8009E21F15D2FF004FE98C /* GetterProcessor.swift */; };
+		7B8009E61F15D438004FE98C /* MacroRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8009E51F15D438004FE98C /* MacroRefactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,8 @@
 
 /* Begin PBXFileReference section */
 		380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterGnerator.swift; sourceTree = "<group>"; };
-		3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProcessor.swift; sourceTree = "<group>"; };
-		388D64771F15324B00A3C988 /* ObjcProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjcProcessor.swift; sourceTree = "<group>"; };
+		3867CAED1F13AB5700B79321 /* SwiftGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGetter.swift; sourceTree = "<group>"; };
+		388D64771F15324B00A3C988 /* ObjcGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjcGetter.swift; sourceTree = "<group>"; };
 		388D64791F15329B00A3C988 /* UIButton.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UIButton.swiftmapper; path = mapper/UIButton.swiftmapper; sourceTree = "<group>"; };
 		38E7085B1F153959008839DB /* UILabel.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UILabel.swiftmapper; path = mapper/UILabel.swiftmapper; sourceTree = "<group>"; };
 		38E7085D1F153986008839DB /* UITableView.swiftmapper */ = {isa = PBXFileReference; lastKnownFileType = text; name = UITableView.swiftmapper; path = mapper/UITableView.swiftmapper; sourceTree = "<group>"; };
@@ -69,7 +72,7 @@
 		7B0CF1501E08D7AD00A5019B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B0CF15A1E08D7CC00A5019B /* Lazy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Lazy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0CF15C1E08D7CC00A5019B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		7B0CF1601E08D7CC00A5019B /* LazyGetter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LazyGetter.entitlements; sourceTree = "<group>"; };
+		7B0CF1601E08D7CC00A5019B /* Lazy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lazy.entitlements; sourceTree = "<group>"; };
 		7B0CF1611E08D7CC00A5019B /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		7B0CF1631E08D7CC00A5019B /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		7B0CF1651E08D7CC00A5019B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 		7B0CF1701E08D84100A5019B /* UITableView.mapper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = UITableView.mapper; path = mapper/UITableView.mapper; sourceTree = "<group>"; };
 		7B0CF1711E08D84100A5019B /* UIView.mapper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = UIView.mapper; path = mapper/UIView.mapper; sourceTree = "<group>"; };
 		7B3648E81E09012500C6558D /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		7B8009E21F15D2FF004FE98C /* GetterProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetterProcessor.swift; sourceTree = "<group>"; };
+		7B8009E51F15D438004FE98C /* MacroRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroRefactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0CF1461E08D7AD00A5019B /* LazyPlugin */,
-				7B0CF15E1E08D7CC00A5019B /* LazyGetter */,
+				7B0CF15E1E08D7CC00A5019B /* Lazy */,
 				7B0CF15B1E08D7CC00A5019B /* Frameworks */,
 				7B0CF1451E08D7AD00A5019B /* Products */,
 			);
@@ -138,25 +143,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7B0CF15E1E08D7CC00A5019B /* LazyGetter */ = {
+		7B0CF15E1E08D7CC00A5019B /* Lazy */ = {
 			isa = PBXGroup;
 			children = (
+				7B8009E41F15D410004FE98C /* MarcoRefactor */,
+				7B8009E11F15D2D0004FE98C /* Getter */,
 				7B0CF1611E08D7CC00A5019B /* SourceEditorExtension.swift */,
 				7B0CF1631E08D7CC00A5019B /* SourceEditorCommand.swift */,
-				380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */,
-				3867CAED1F13AB5700B79321 /* SwiftProcessor.swift */,
-				388D64771F15324B00A3C988 /* ObjcProcessor.swift */,
 				7B0CF1651E08D7CC00A5019B /* Info.plist */,
 				7B0CF15F1E08D7CC00A5019B /* Supporting Files */,
 			);
-			path = LazyGetter;
+			path = Lazy;
 			sourceTree = "<group>";
 		};
 		7B0CF15F1E08D7CC00A5019B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B0F78431F15CAC100C38F36 /* swiftmapper */,
 				7B0CF16D1E08D83200A5019B /* mapper */,
-				7B0CF1601E08D7CC00A5019B /* LazyGetter.entitlements */,
+				7B0CF1601E08D7CC00A5019B /* Lazy.entitlements */,
 				7B3648E81E09012500C6558D /* ReadMe */,
 			);
 			name = "Supporting Files";
@@ -169,12 +174,38 @@
 				7B0CF16F1E08D84100A5019B /* UILabel.mapper */,
 				7B0CF1701E08D84100A5019B /* UITableView.mapper */,
 				7B0CF1711E08D84100A5019B /* UIView.mapper */,
+			);
+			name = mapper;
+			sourceTree = "<group>";
+		};
+		7B0F78431F15CAC100C38F36 /* swiftmapper */ = {
+			isa = PBXGroup;
+			children = (
 				388D64791F15329B00A3C988 /* UIButton.swiftmapper */,
 				38E7085B1F153959008839DB /* UILabel.swiftmapper */,
 				38E7085D1F153986008839DB /* UITableView.swiftmapper */,
 				38E7085F1F1539A2008839DB /* UIView.swiftmapper */,
 			);
-			name = mapper;
+			name = swiftmapper;
+			sourceTree = "<group>";
+		};
+		7B8009E11F15D2D0004FE98C /* Getter */ = {
+			isa = PBXGroup;
+			children = (
+				380E1DCF1F11D70700E45C24 /* GetterGnerator.swift */,
+				3867CAED1F13AB5700B79321 /* SwiftGetter.swift */,
+				388D64771F15324B00A3C988 /* ObjcGetter.swift */,
+				7B8009E21F15D2FF004FE98C /* GetterProcessor.swift */,
+			);
+			path = Getter;
+			sourceTree = "<group>";
+		};
+		7B8009E41F15D410004FE98C /* MarcoRefactor */ = {
+			isa = PBXGroup;
+			children = (
+				7B8009E51F15D438004FE98C /* MacroRefactor.swift */,
+			);
+			path = MarcoRefactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,10 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E7085E1F153986008839DB /* UITableView.swiftmapper in Resources */,
 				7B0CF14C1E08D7AD00A5019B /* Assets.xcassets in Resources */,
 				7B0CF14F1E08D7AD00A5019B /* Main.storyboard in Resources */,
-				38E708601F1539A2008839DB /* UIView.swiftmapper in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0F78401F15C92200C38F36 /* UILabel.swiftmapper in Resources */,
+				7B0F78411F15C92200C38F36 /* UITableView.swiftmapper in Resources */,
+				7B0F78421F15C92200C38F36 /* UIView.swiftmapper in Resources */,
 				7B3648E91E09012500C6558D /* ReadMe in Resources */,
 				7B0CF1721E08D84100A5019B /* UIButton.mapper in Resources */,
 				7B0CF1751E08D84100A5019B /* UIView.mapper in Resources */,
@@ -301,10 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3867CAEE1F13AB5700B79321 /* SwiftProcessor.swift in Sources */,
+				3867CAEE1F13AB5700B79321 /* SwiftGetter.swift in Sources */,
+				7B8009E31F15D2FF004FE98C /* GetterProcessor.swift in Sources */,
 				380E1DD01F11D70700E45C24 /* GetterGnerator.swift in Sources */,
 				7B0CF1621E08D7CC00A5019B /* SourceEditorExtension.swift in Sources */,
-				388D64781F15324B00A3C988 /* ObjcProcessor.swift in Sources */,
+				7B8009E61F15D438004FE98C /* MacroRefactor.swift in Sources */,
+				388D64781F15324B00A3C988 /* ObjcGetter.swift in Sources */,
 				7B0CF1641E08D7CC00A5019B /* SourceEditorCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,15 +494,17 @@
 		7B0CF16A1E08D7CC00A5019B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LazyGetter/LazyGetter.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DPJ43EEV6L;
-				INFOPLIST_FILE = LazyGetter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Lazy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = nangezao.LazyPlugin.LazyGetter;
+				PRODUCT_BUNDLE_IDENTIFIER = nangezao.LazyPlugin.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -478,15 +514,17 @@
 		7B0CF16B1E08D7CC00A5019B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LazyGetter/LazyGetter.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lazy/Lazy.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DPJ43EEV6L;
-				INFOPLIST_FILE = LazyGetter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Lazy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = nangezao.LazyPlugin.LazyGetter;
+				PRODUCT_BUNDLE_IDENTIFIER = nangezao.LazyPlugin.Lazy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

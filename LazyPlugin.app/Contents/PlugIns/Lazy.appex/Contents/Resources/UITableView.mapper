@@ -1,0 +1,10 @@
+- (UITableView *)replaceMe{
+    if(!_replaceMe){
+        _replaceMe = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _replaceMe.backgroundColor = <#Color#>
+        _replaceMe.dataSource = self;
+        _replaceMe.delegate = self;
+       [_replaceMe registerClass:<#(nullable Class)#> forCellReuseIdentifier:<#(nonnull NSString *)#>]
+    }
+    return _replaceMe;
+}

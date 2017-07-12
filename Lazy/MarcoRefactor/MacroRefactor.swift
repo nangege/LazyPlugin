@@ -24,7 +24,7 @@ class MacroRefactor:NSObject, XCSourceEditorCommand {
                              .filter{ $0 != ""}
                              .map{ $0.trimmingCharacters(in: .newlines)}
         
-        //  at least define , name , value
+        //at least split to define, name, value
         if splitTexts.count < 3 { continue }
         
         let name = splitTexts[1]

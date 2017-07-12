@@ -15,30 +15,21 @@ class GetterProcessor:NSObject,XCSourceEditorCommand {
         let processors:[GetterGenerator] = [ObjcGetter(),SwiftGetter()]
         var generator:GetterGenerator? = nil
         
-        invocation.buffer.selections
-            .filter{
-                $0 as? XCSourceTextRange != nil
+        invocation.buffer.selections.forEach { (textRange) in
+          guard let textRange = textRange as? XCSourceTextRange else { return }
+          for line in textRange.start.line ... textRange.end.line{
+            guard let text = invocation.buffer.lines[line] as? String else{  continue }
+            
+            // find processor to process
+            for processor in processors {
+              if processor.canProcess(text: text){
+                generator = processor
+                break
+              }
             }
-            .map{
-                $0 as! XCSourceTextRange
-            }
-            .forEach { (textRange) in
-                
-                for line in textRange.start.line ... textRange.end.line{
-                    guard let text = invocation.buffer.lines[line] as? String else{
-                        continue
-                    }
-                    for processor in processors {
-                        if processor.canProcess(text: text){
-                            generator = processor
-                            break
-                        }
-                    }
-                    if generator != nil{
-                        break
-                    }
-                }
-                generator?.perform(with: invocation)
+            if generator != nil{  break }
+          }
+          generator?.perform(with: invocation)
         }
         completionHandler(nil)
     }

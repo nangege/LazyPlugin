@@ -1,0 +1,5 @@
+let replaceMe:UITableView = {
+  let tableView = UITableView()
+  tableView.dataSource = self
+  tableView.delegate = self
+}()

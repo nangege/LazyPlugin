@@ -1,0 +1,7 @@
+let replaceMe:UILabel = {
+  let label = UILabel()
+  label.text = <#Text#>
+  label.font = <#Font#>
+  label.textColor = <#Color#>
+  return label
+}()

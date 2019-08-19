@@ -23,19 +23,19 @@ struct SwiftGetter {
   }
   
   
-  func getProperty(from lineText:String) -> String {
+  func getProperty(from lineText: String) -> String {
     return lineText.components(separatedBy: ":").first!
                    .components(separatedBy: .whitespaces).last!
                    .trimmingCharacters(in: .whitespaces)
   }
   
-  func getClassName(from lineText:String) -> String{
+  func getClassName(from lineText: String) -> String{
     return lineText.components(separatedBy: ":").last!
                    .trimmingCharacters(in: .whitespaces)
                    .trimmingCharacters(in: .newlines)
   }
   
-  func getter(forClass className:String, property:String) -> [String] {
+  func getter(forClass className: String, property:String) -> [String] {
     let templete = templeFor(className: className)
     let texts = templete.replacingOccurrences(of: Constant.ClassNamePlaceHolder,with: className)
                         .replacingOccurrences(of: Constant.PropertyPlaceHolder, with: property)
@@ -43,7 +43,7 @@ struct SwiftGetter {
     return texts
   }
   
-  func getter(from text:String) -> Array<String> {
+  func getter(from text: String) -> Array<String> {
     let property = getProperty(from: text)
     let className = getClassName(from: text)
     
@@ -75,10 +75,10 @@ struct SwiftGetter {
   }
 }
 
-extension SwiftGetter:GetterGenerator{
+extension SwiftGetter: GetterGenerator{
   
   func generator(text: String) -> Array<String> {
-    return getter(from:text)
+    return getter(from: text)
   }
   
   func canProcess(text: String) -> Bool {

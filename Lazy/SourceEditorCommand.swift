@@ -13,7 +13,7 @@ import XcodeKit
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
   func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
-    let processorMapper:[String:XCSourceEditorCommand] = ["Getter":GetterProcessor(),
+    let processorMapper:[String: XCSourceEditorCommand] = ["Getter":GetterProcessor(),
                                                           "MacroRefactor":MacroRefactor()]
     
     if let processor = processorMapper[invocation.commandIdentifier] {

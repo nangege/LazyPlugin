@@ -9,7 +9,7 @@
 import Foundation
 import XcodeKit
 
-class MacroRefactor:NSObject, XCSourceEditorCommand {
+class MacroRefactor: NSObject, XCSourceEditorCommand {
   func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
     invocation.buffer.selections.forEach { (textRange) in
       guard let textRange = textRange as? XCSourceTextRange else{ return }
@@ -57,23 +57,23 @@ class MacroRefactor:NSObject, XCSourceEditorCommand {
     return valueType
   }
   
-  func isObjcString(text:String) -> Bool{
+  func isObjcString(text: String) -> Bool{
     return text.starts(with: "@\"")
   }
   
-  func isFloatValue(text:String) -> Bool{
+  func isFloatValue(text: String) -> Bool{
     let floatValue = (text as NSString).floatValue
     
     // only value with "." be treated as CGFloat ,else as Interger
     return text.contains(".") && floatValue != 0
   }
   
-  func isIntValue(text:String) -> Bool{
+  func isIntValue(text: String) -> Bool{
     let intValue = (text as NSString).integerValue
     return intValue != 0
   }
   
-  func canProcess(text:String) -> Bool {
+  func canProcess(text: String) -> Bool {
     return text.trimmingCharacters(in: .whitespaces).hasPrefix("#define")
   }
 }

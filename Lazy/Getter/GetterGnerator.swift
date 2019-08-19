@@ -10,8 +10,8 @@ import Foundation
 import XcodeKit
 
 protocol GetterGenerator {
-  func canProcess(text:String) -> Bool
-  func generator(text:String) -> Array<String>
+  func canProcess(text: String) -> Bool
+  func generator(text: String) -> Array<String>
   func perform(with invocation: XCSourceEditorCommandInvocation)
 }
 

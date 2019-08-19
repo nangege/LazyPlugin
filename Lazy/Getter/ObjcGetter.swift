@@ -8,7 +8,7 @@
 
 import XcodeKit
 
-struct ObjcGetter:GetterGenerator {
+struct ObjcGetter: GetterGenerator {
   struct Constant {
     static let ObjcTemplate = """
                               -(ClassName *)replaceMe{

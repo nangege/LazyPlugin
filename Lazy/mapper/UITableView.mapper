@@ -1,4 +1,5 @@
-- (UITableView *)replaceMe{
+- (UITableView *)replaceMe
+{
     if(!_replaceMe){
         _replaceMe = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _replaceMe.backgroundColor = <#Color#>

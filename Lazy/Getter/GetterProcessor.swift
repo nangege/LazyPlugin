@@ -12,8 +12,8 @@ import XcodeKit
 class GetterProcessor:NSObject,XCSourceEditorCommand {
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
-        let processors:[GetterGenerator] = [ObjcGetter(),SwiftGetter()]
-        var generator:GetterGenerator? = nil
+        let processors: [GetterGenerator] = [ObjcGetter(),SwiftGetter()]
+        var generator: GetterGenerator? = nil
         
         invocation.buffer.selections.forEach { (textRange) in
           guard let textRange = textRange as? XCSourceTextRange else { return }

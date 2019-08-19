@@ -1,4 +1,5 @@
-- (UILabel *)replaceMe{
+- (UILabel *)replaceMe
+{
     if(!_replaceMe){
         _replaceMe = [[UILabel alloc] init];
         _replaceMe.font = <#Font#>;

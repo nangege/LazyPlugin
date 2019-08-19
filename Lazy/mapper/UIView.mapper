@@ -1,4 +1,5 @@
-- (UIView *)replaceMe{
+- (UIView *)replaceMe
+{
     if(!_replaceMe){
         _replaceMe = [[UIView alloc] init];
         _replaceMe.backgroundColor = <#Color#>;

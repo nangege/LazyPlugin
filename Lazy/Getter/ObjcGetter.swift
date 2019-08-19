@@ -11,7 +11,8 @@ import XcodeKit
 struct ObjcGetter: GetterGenerator {
   struct Constant {
     static let ObjcTemplate = """
-                              -(ClassName *)replaceMe{
+                              -(ClassName *)replaceMe
+                              {
                                   if(!_replaceMe){
                                       _replaceMe = [[ClassName alloc] init];
                                   }

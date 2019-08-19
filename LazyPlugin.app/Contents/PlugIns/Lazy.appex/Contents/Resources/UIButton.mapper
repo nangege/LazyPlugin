@@ -1,4 +1,5 @@
-- (UIButton *)replaceMe{
+- (UIButton *)replaceMe
+{
     if(!_replaceMe){
         _replaceMe = [UIButton buttonWithType:UIButtonTypeCustom];
         [_replaceMe setImage:<#Image#> forState:UIControlStateNormal];
